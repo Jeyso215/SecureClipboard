@@ -16,3 +16,7 @@ pip install base64
 pip install pynput
 ```
 and then install `sudo apt-get install xclip xsel -y`
+
+#---------
+
+If you got any problems, feel free to ask
