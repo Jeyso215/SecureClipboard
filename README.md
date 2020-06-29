@@ -9,14 +9,17 @@ A little python script for linux to encrypt words in your clipboard
 
 **WHAT YOU NEED:** Install packages: 
 ```
-pip install clipboard
+pip install pyperclip
 pip install os
 pip install sys
 pip install base64
 pip install pynput
-```
-and then install `sudo apt-get install xclip xsel -y`
+pip install pyautogui
 
+```
+and then install `sudo apt-get install xclip xsel -y` and `sudo apt-get install python3-tk python3-dev`
+
+And you need to be using ***python 3.7.3*** (*due python3-tk python3-dev packages*)
 #---------
 
 If you got any problems, feel free to ask
