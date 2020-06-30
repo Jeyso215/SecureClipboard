@@ -16,14 +16,18 @@ def on_press(key):
         if key.char.lower() == "c" :
             os.system('cls' if os.name == 'nt' else 'clear')
             pyperclip.copy(base64.b64encode(str(os.popen('xsel').read()).encode('utf-8')).decode('utf-8'))
-            print("\nCopied, done\n\nNow Press 'v' to view the copied data")
+            print("\nCopied, done\n\nNow Press 'v' to paste the copied data")
         elif key.char.lower() == "v":
-            os.system('cls' if os.name == 'nt' else 'clear')
             pyautogui.click(pyautogui.position())
             pyautogui.typewrite(base64.b64decode(pyperclip.paste()).decode('utf-8'))
+            raise SystemExit
     except AttributeError:
         os.system('cls' if os.name == 'nt' else 'clear')
-        print("Please press 'c' to copy (After you select the text) or 'v' to paste (After you hover your mouse in the place you want to paste the words in) or 'ESC' if you want to leave")
+        print("Please press 'c' to copy (After you select the text) or 'v' to show copied text or 'ESC' if you want to leave")
+    except SystemExit:
+        os.system('cls' if os.name == 'nt' else 'clear')
+        print("\nDue some weird stuff happens with long texts, the app exits after it finishes") 
+        sys.exit()  
     except :
         os.system('cls' if os.name == 'nt' else 'clear')
         print(f"\nHmm, something wrong. please report the error as {sys.exc_info()[0]}")
